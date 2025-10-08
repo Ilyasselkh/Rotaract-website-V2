@@ -309,25 +309,6 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
-        {/* Social Media & Footer */}
-        <div className="relative bg-slate-900/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Suivez-nous sur les réseaux sociaux</h3>
-            <p className="text-gray-400 mb-6">Restez connectés et découvrez nos actualités</p>
-            <div className="flex items-center justify-center gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.url}
-                  className={`w-14 h-14 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:border-white/20 ${social.color}`}
-                >
-                  <social.icon className="w-6 h-6" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Success Notification */}
