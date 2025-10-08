@@ -499,23 +499,68 @@ export default function AboutPage() {
       )}
 
       {/* Mission Statement */}
-      <div className="relative py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="backdrop-blur-xl bg-gradient-to-br from-pink-500 to-purple-600 rounded-3xl p-16 shadow-2xl text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] opacity-20"></div>
-            
-            <div className="relative z-10">
-              <Star className="w-16 h-16 text-white mx-auto mb-6 animate-pulse" />
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-                Notre Mission
-              </h2>
-              <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-                Développer les compétences de leadership, encourager le service communautaire de haute qualité, 
-                promouvoir la compréhension internationale et favoriser l&apos;amitié entre les jeunes du monde entier
-              </p>
-            </div>
-          </div>
+      <div className="relative py-28 px-6 overflow-hidden">
+  {/* Background gradient with moving shapes */}
+  <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-fuchsia-600 animate-gradient-x"></div>
+  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+
+  {/* Floating icons */}
+  <div className="absolute top-10 left-10 text-white/20 animate-float-slow">
+    <Star className="w-12 h-12" />
+  </div>
+  <div className="absolute bottom-16 right-16 text-white/20 animate-float">
+    <Heart className="w-14 h-14" />
+  </div>
+  <div className="absolute top-1/2 left-1/4 text-white/20 animate-float-delay">
+    <Globe className="w-10 h-10" />
+  </div>
+
+  <div className="relative z-10 max-w-5xl mx-auto text-center text-white">
+    <div className="inline-block px-8 py-3 bg-white/10 backdrop-blur-xl rounded-full mb-8 shadow-lg">
+      <span className="text-sm uppercase tracking-widest font-semibold">
+        Ensemble pour un monde meilleur
+      </span>
+    </div>
+
+    <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight drop-shadow-lg">
+      Notre <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-white to-pink-200">Mission</span>
+    </h2>
+
+    <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
+      Inspirer, connecter et transformer nos communautés à travers des actions concrètes.
+      Nous croyons au pouvoir du leadership, de la solidarité et de l’innovation
+      pour bâtir un avenir meilleur.
+    </p>
+
+    <div className="grid md:grid-cols-3 gap-8 mt-12">
+      {[
+        {
+          icon: <Target className="w-10 h-10 text-yellow-300" />,
+          title: "Leadership",
+          desc: "Former les leaders de demain grâce à des projets à fort impact."
+        },
+        {
+          icon: <Handshake className="w-10 h-10 text-pink-200" />,
+          title: "Service",
+          desc: "Servir notre communauté avec bienveillance et engagement."
+        },
+        {
+          icon: <Globe className="w-10 h-10 text-purple-200" />,
+          title: "Solidarité",
+          desc: "Favoriser la compréhension internationale et l’amitié entre les peuples."
+        }
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 transform hover:-translate-y-2 shadow-lg"
+        >
+          <div className="flex justify-center mb-4">{item.icon}</div>
+          <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+          <p className="text-white/80">{item.desc}</p>
         </div>
+      ))}
+    </div>
+  </div>
       </div>
 
       <style jsx>{`
@@ -555,6 +600,26 @@ export default function AboutPage() {
           animation-delay: 0.4s;
           opacity: 0;
         }
+        
+        @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+    .animate-float-delay { animation: float 7s ease-in-out infinite 2s; }
+    .animate-gradient-x {
+      background-size: 200% 200%;
+      animation: gradient-x 10s ease infinite;
+    }
       `}</style>
     </div>
   );

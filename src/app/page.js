@@ -194,17 +194,53 @@ export default function RotaractHome() {
         </div>
       </div>
 
-      {/* Quote Section with Glassmorphism */}
+      {/* Quote Section with Modern Design */}
       <div className="relative py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="backdrop-blur-xl bg-white/40 border border-white/50 rounded-3xl p-12 md:p-16 shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-100/50 to-purple-100/50"></div>
-            <div className="relative z-10">
-              <Globe className="w-16 h-16 text-pink-400 mx-auto mb-8 animate-pulse" />
-              <p className="text-3xl md:text-5xl font-light text-gray-800 text-center leading-relaxed mb-6">
-                &quot;Le service au-dessus de soi-même n&apos;est pas juste notre devise,
-                <span className="font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent"> c&apos;est notre mode de vie</span>&quot;
-              </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="relative group">
+            {/* Animated gradient border */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-pink-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition duration-1000 animate-gradient"></div>
+            
+            <div className="relative backdrop-blur-2xl bg-gradient-to-br from-gray-900/95 to-gray-800/95 border border-white/10 rounded-3xl p-12 md:p-20 shadow-2xl overflow-hidden">
+              {/* Animated background pattern */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 1px)`,
+                  backgroundSize: '48px 48px'
+                }}></div>
+              </div>
+              
+              {/* Floating orbs */}
+              <div className="absolute top-10 right-10 w-32 h-32 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
+              
+              <div className="relative z-10">
+                <div className="flex justify-center mb-10">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-xl opacity-50 animate-pulse"></div>
+                    <div className="relative bg-gradient-to-br from-pink-500 to-purple-600 p-4 rounded-full">
+                      <Globe className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="h-1 w-16 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
+                  
+                  <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center leading-tight">
+                    &quot;Le service au-dessus de soi-même n&apos;est pas juste notre devise,
+                  </p>
+                  
+                  <p className="text-3xl md:text-4xl lg:text-5xl font-black text-center leading-tight">
+                    <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
+                      c&apos;est notre mode de vie
+                    </span>
+                    &quot;
+                  </p>
+                  
+                  <div className="h-1 w-16 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -344,28 +380,108 @@ export default function RotaractHome() {
         </div>
       </div>
 
-      {/* CTA Section */}
+      {/* CTA Section - Ultra Modern */}
       <div className="relative py-32 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative backdrop-blur-xl bg-gradient-to-br from-pink-500 to-purple-600 rounded-3xl p-16 shadow-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] opacity-20"></div>
+        <div className="max-w-6xl mx-auto">
+          <div className="relative group">
+            {/* Animated gradient background */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-3xl opacity-75 group-hover:opacity-100 blur-2xl transition duration-1000 animate-gradient"></div>
             
-            <div className="relative z-10 text-center">
-              <Sparkles className="w-16 h-16 text-white mx-auto mb-8 animate-pulse" />
+            <div className="relative bg-gradient-to-br from-gray-900 via-purple-900/50 to-pink-900/50 rounded-3xl overflow-hidden">
+              {/* Grid pattern overlay */}
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+                  backgroundSize: '50px 50px'
+                }}></div>
+              </div>
               
-              <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-                Prêt à Faire la Différence ?
-              </h2>
+              {/* Animated particles */}
+              <div className="absolute inset-0">
+                <div className="absolute top-20 left-20 w-2 h-2 bg-pink-400 rounded-full animate-ping"></div>
+                <div className="absolute top-40 right-32 w-2 h-2 bg-purple-400 rounded-full animate-ping animation-delay-2000"></div>
+                <div className="absolute bottom-32 left-40 w-2 h-2 bg-blue-400 rounded-full animate-ping animation-delay-4000"></div>
+                <div className="absolute bottom-20 right-20 w-2 h-2 bg-pink-400 rounded-full animate-ping"></div>
+              </div>
               
-              <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-                Rejoignez notre communauté de jeunes leaders engagés et participez à des projets qui changent des vies
-              </p>
-              <Link href="/join">
-              <button className="group px-12 py-5 bg-white text-pink-600 font-bold rounded-full text-lg hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center gap-3 mx-auto">
-                Devenir Membre
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
-              </Link>
+              {/* Main content */}
+              <div className="relative z-10 px-8 py-20 md:px-16 md:py-24">
+                <div className="text-center max-w-4xl mx-auto">
+                  {/* Icon with glow effect */}
+                  <div className="flex justify-center mb-8">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-2xl opacity-60 animate-pulse"></div>
+                      <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-full">
+                        <Sparkles className="w-12 h-12 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Title with split animation effect */}
+                  <div className="space-y-4 mb-8">
+                    <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
+                      Prêt à Faire
+                    </h2>
+                    <h2 className="text-4xl md:text-5xl font-black leading-tight">
+                      <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+                        la Différence ?
+                      </span>
+                    </h2>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-lg md:text-xl text-white/80 mb-12 leading-relaxed max-w-2xl mx-auto">
+                    Rejoignez notre communauté de jeunes leaders engagés et participez à des projets qui changent des vies
+                  </p>
+                  
+                  {/* CTA Button with modern design */}
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <Link href="/join">
+                      <button className="group relative px-10 py-5 bg-white text-gray-900 font-bold rounded-full text-lg overflow-hidden transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-pink-500/50">
+                        <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span className="relative z-10 flex items-center gap-3 group-hover:text-white transition-colors">
+                          Devenir Membre
+                          <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                        </span>
+                      </button>
+                    </Link>
+                    
+                    <Link href="/about">
+                      <button className="group px-10 py-5 backdrop-blur-xl bg-white/10 border-2 border-white/30 text-white font-bold rounded-full text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+                        En savoir plus
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </Link>
+                  </div>
+                  
+                  {/* Values/Benefits bar */}
+                  <div className="mt-16 pt-12 border-t border-white/10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      <div className="text-center">
+                        <div className="flex justify-center mb-3">
+                          <Heart className="w-8 h-8 text-pink-400" />
+                        </div>
+                        <p className="text-lg font-bold text-white mb-2">Impact Communautaire</p>
+                        <p className="text-sm text-white/60">Créez un changement durable dans votre communauté</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="flex justify-center mb-3">
+                          <Users className="w-8 h-8 text-purple-400" />
+                        </div>
+                        <p className="text-lg font-bold text-white mb-2">Réseau International</p>
+                        <p className="text-sm text-white/60">Connectez-vous avec des leaders du monde entier</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="flex justify-center mb-3">
+                          <Lightbulb className="w-8 h-8 text-blue-400" />
+                        </div>
+                        <p className="text-lg font-bold text-white mb-2">Développement Personnel</p>
+                        <p className="text-sm text-white/60">Développez vos compétences de leadership</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -399,6 +515,18 @@ export default function RotaractHome() {
         }
         .animate-fade-in-up {
           animation: fade-in-up 1s ease-out;
+        }
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
         }
       `}</style>
     </div>
