@@ -1,6 +1,7 @@
 "use client";
+import emailjs from '@emailjs/browser';
 import React, { useState } from "react";
-import { User, Mail, Phone, FileText, Sparkles, Rocket, Check } from "lucide-react";
+import { User, Mail, Phone, FileText, Sparkles, Rocket, Check, AlertCircle } from "lucide-react";
 
 export default function JoinPage() {
   const [formData, setFormData] = useState({
@@ -9,42 +10,116 @@ export default function JoinPage() {
     phone: "",
     motivation: "",
     cv: null,
+    motivationLetter: null,
   });
   const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [confettis, setConfettis] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "cv") {
-      setFormData({ ...formData, cv: files[0] });
+    if (name === "cv" || name === "motivationLetter") {
+      setFormData({ ...formData, [name]: files[0] });
+      if (files[0]) {
+        setErrors({ ...errors, [name]: "" });
+      }
     } else {
       setFormData({ ...formData, [name]: value });
+      if (value.trim()) {
+        setErrors({ ...errors, [name]: "" });
+      }
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Candidature envoyée :", formData);
-    setSuccess(true);
-    setShowPopup(true);
-    
-    const newConfettis = Array.from({ length: 80 }).map((_, i) => ({
-      id: i,
-      left: Math.random() * 100 + "%",
-      background: `hsl(${Math.random() * 60 + 300}, 100%, ${Math.random() * 20 + 60}%)`,
-      size: Math.random() * 12 + 4 + "px",
-      delay: Math.random() * 0.5,
-    }));
-    setConfettis(newConfettis);
+  const validateForm = () => {
+    const newErrors = {};
 
-    setTimeout(() => {
-      setSuccess(false);
-      setConfettis([]);
-      setShowPopup(false);
-      setFormData({ name: "", email: "", phone: "", motivation: "", cv: null });
-    }, 5000);
+    if (!formData.name.trim()) {
+      newErrors.name = "Le nom est requis";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "L'email est requis";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Email invalide";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Le téléphone est requis";
+    }
+
+    if (!formData.motivation.trim()) {
+      newErrors.motivation = "La lettre de motivation est requise";
+    }
+
+    if (!formData.cv) {
+      newErrors.cv = "Le CV est requis";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Préparation des données pour l'email
+    const emailData = {
+      to_email: "ilyaskhyari@gmail.com", // REMPLACEZ PAR VOTRE EMAIL
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      motivation: formData.motivation,
+      cv_name: formData.cv ? formData.cv.name : "Aucun fichier"
+    };
+
+    try {
+      // EmailJS 
+       await emailjs.send(
+         'YOUR_SERVICE_ID',
+         'YOUR_TEMPLATE_ID',
+         emailData,
+         'YOUR_PUBLIC_KEY'
+       );
+
+      // Simulation d'envoi (RETIREZ CETTE LIGNE en production)
+      console.log("Candidature envoyée :", emailData);
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setSuccess(true);
+      setShowPopup(true);
+      
+      const newConfettis = Array.from({ length: 80 }).map((_, i) => ({
+        id: i,
+        left: Math.random() * 100 + "%",
+        background: `hsl(${Math.random() * 60 + 300}, 100%, ${Math.random() * 20 + 60}%)`,
+        size: Math.random() * 12 + 4 + "px",
+        delay: Math.random() * 0.5,
+      }));
+      setConfettis(newConfettis);
+
+      setTimeout(() => {
+        setSuccess(false);
+        setConfettis([]);
+        setShowPopup(false);
+        setFormData({ name: "", email: "", phone: "", motivation: "", cv: null, motivationLetter: null });
+        setErrors({});
+      }, 5000);
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      setErrors({ submit: "Une erreur est survenue. Veuillez réessayer." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -94,12 +169,21 @@ export default function JoinPage() {
                   onBlur={() => setFocusedField(null)}
                   required
                   placeholder="Entrez votre nom"
-                  className="w-full px-6 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-300"
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.name ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-300`}
                 />
-                {formData.name && (
+                {formData.name && !errors.name && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
                 )}
+                {errors.name && (
+                  <AlertCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-red-400" />
+                )}
               </div>
+              {errors.name && (
+                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.name}
+                </p>
+              )}
             </div>
 
             {/* Email Field */}
@@ -118,12 +202,21 @@ export default function JoinPage() {
                   onBlur={() => setFocusedField(null)}
                   required
                   placeholder="votre@email.com"
-                  className="w-full px-6 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-2xl text-white placeholder-gray-500 focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all duration-300"
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.email ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all duration-300`}
                 />
-                {formData.email && (
+                {formData.email && !errors.email && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
                 )}
+                {errors.email && (
+                  <AlertCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-red-400" />
+                )}
               </div>
+              {errors.email && (
+                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.email}
+                </p>
+              )}
             </div>
 
             {/* Phone Field */}
@@ -141,33 +234,23 @@ export default function JoinPage() {
                   onFocus={() => setFocusedField('phone')}
                   onBlur={() => setFocusedField(null)}
                   placeholder="+212 XXX XXX XXX"
-                  className="w-full px-6 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-2xl text-white placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300"
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.phone ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300`}
                 />
-                {formData.phone && (
+                {formData.phone && !errors.phone && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
                 )}
+                {errors.phone && (
+                  <AlertCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-red-400" />
+                )}
               </div>
+              {errors.phone && (
+                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.phone}
+                </p>
+              )}
             </div>
 
-            {/* Motivation Field */}
-            <div className="group">
-              <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                <FileText className="w-4 h-4 text-purple-400" />
-                Lettre de motivation
-              </label>
-              <div className={`relative transition-all duration-300 ${focusedField === 'motivation' ? 'scale-[1.02]' : ''}`}>
-                <textarea
-                  name="motivation"
-                  value={formData.motivation}
-                  onChange={handleChange}
-                  onFocus={() => setFocusedField('motivation')}
-                  onBlur={() => setFocusedField(null)}
-                  placeholder="Parlez-nous de vous et de votre motivation..."
-                  rows="5"
-                  className="w-full px-6 py-4 bg-slate-800/50 border-2 border-slate-700 rounded-2xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-300 resize-none"
-                />
-              </div>
-            </div>
 
             {/* CV Upload */}
             <div className="group">
@@ -185,7 +268,7 @@ export default function JoinPage() {
                 />
                 <label
                   htmlFor="cv-upload"
-                  className="flex items-center justify-center w-full px-6 py-4 bg-slate-800/50 border-2 border-dashed border-slate-700 rounded-2xl text-gray-400 hover:border-purple-500 hover:text-purple-400 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-slate-800/70"
+                  className={`flex items-center justify-center w-full px-6 py-4 bg-slate-800/50 border-2 border-dashed ${errors.cv ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-gray-400 hover:border-purple-500 hover:text-purple-400 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-slate-800/70`}
                 >
                   {formData.cv ? (
                     <span className="flex items-center gap-2 text-purple-400">
@@ -197,18 +280,73 @@ export default function JoinPage() {
                   )}
                 </label>
               </div>
+              {errors.cv && (
+                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.cv}
+                </p>
+              )}
             </div>
+
+            {/* Motivation Letter Upload (Optional) */}
+            <div className="group">
+              <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
+                📝 Lettre de motivation (fichier)
+                <span className="text-xs text-gray-500 font-normal">(Optionnel)</span>
+              </label>
+              <div className="relative">
+                <input
+                  type="file"
+                  name="motivationLetter"
+                  onChange={handleChange}
+                  accept=".pdf,.doc,.docx"
+                  className="hidden"
+                  id="motivation-letter-upload"
+                />
+                <label
+                  htmlFor="motivation-letter-upload"
+                  className="flex items-center justify-center w-full px-6 py-4 bg-slate-800/50 border-2 border-dashed border-slate-700 rounded-2xl text-gray-400 hover:border-blue-500 hover:text-blue-400 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-slate-800/70"
+                >
+                  {formData.motivationLetter ? (
+                    <span className="flex items-center gap-2 text-blue-400">
+                      <Check className="w-5 h-5" />
+                      {formData.motivationLetter.name}
+                    </span>
+                  ) : (
+                    <span>Cliquez pour télécharger votre lettre de motivation</span>
+                  )}
+                </label>
+              </div>
+            </div>
+
+            {/* Submit Error */}
+            {errors.submit && (
+              <div className="bg-red-500/10 border border-red-500/50 rounded-2xl p-4 flex items-center gap-2 text-red-400">
+                <AlertCircle className="w-5 h-5" />
+                <span>{errors.submit}</span>
+              </div>
+            )}
 
             {/* Submit Button */}
             <button
               type="button"
               onClick={handleSubmit}
-              className="group relative w-full py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-2xl font-bold text-white text-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/50 active:scale-[0.98]"
+              disabled={isSubmitting}
+              className="group relative w-full py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-2xl font-bold text-white text-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/50 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative flex items-center justify-center gap-3">
-                Envoyer ma candidature
-                <Rocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    Envoi en cours...
+                  </>
+                ) : (
+                  <>
+                    Envoyer ma candidature
+                    <Rocket className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                  </>
+                )}
               </span>
             </button>
           </div>
