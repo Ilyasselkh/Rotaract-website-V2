@@ -37,7 +37,7 @@ export default function MembersPage() {
     },
     {
       id: 3,
-      name: "Iness",
+      name: "Malak",
       role: "Secrétaire Générale",
       status: "secretary",
       email: "secretaire@club.ma",
@@ -115,7 +115,7 @@ export default function MembersPage() {
     },
     {
       id: 9,
-      name: "Malak",
+      name: "Rania",
       role: "Membre Actif",
       status: "member",
       email: "membre2@club.ma",
@@ -124,11 +124,11 @@ export default function MembersPage() {
       bio: "Participation active aux projets",
       joinDate: "2024",
       projects: 4,
-      achievements: "✨ Creative Mind"
+      achievements: "🌺 Enthusiast"
     },
     {
       id: 10,
-      name: "Aymane Rodi",
+      name: "Nagham Brahmi",
       role: "Membre Actif",
       status: "member",
       email: "membre3@club.ma",
@@ -137,11 +137,11 @@ export default function MembersPage() {
       bio: "Participation active aux projets",
       joinDate: "2024",
       projects: 6,
-      achievements: "💡 Innovator"
+      achievements: "🎨 Designer"
     },
     {
       id: 11,
-      name: "Nagham Brahmi",
+      name: "",
       role: "Membre Actif",
       status: "member",
       email: "membre4@club.ma",
@@ -150,7 +150,7 @@ export default function MembersPage() {
       bio: "Participation active aux projets",
       joinDate: "2024",
       projects: 3,
-      achievements: "🎨 Designer"
+      achievements: "💡 Innovator"
     },
     {
       id: 12,
@@ -232,7 +232,7 @@ export default function MembersPage() {
     },
     {
       id: 18,
-      name: "Mohamed Nourane Lahlou",
+      name: "Nourane Lahlou",
       role: "Membre Actif",
       status: "member",
       email: "membre11@club.ma",
@@ -258,7 +258,7 @@ export default function MembersPage() {
     },
     {
       id: 20,
-      name: "Rania",
+      name: "Aymane Rodi",
       role: "Membre Actif",
       status: "member",
       email: "membre13@club.ma",
@@ -267,7 +267,7 @@ export default function MembersPage() {
       bio: "Participation active aux projets",
       joinDate: "2024",
       projects: 7,
-      achievements: "🌺 Enthusiast"
+      achievements: "✨ Creative Mind "
     }
   ];
 
