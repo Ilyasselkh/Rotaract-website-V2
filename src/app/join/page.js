@@ -63,6 +63,16 @@ export default function JoinPage() {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Fonction pour convertir les fichiers en Base64
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -72,28 +82,33 @@ export default function JoinPage() {
 
     setIsSubmitting(true);
 
-    // Préparation des données pour l'email
-    const emailData = {
-      to_email: "ilyaskhyari@gmail.com", // REMPLACEZ PAR VOTRE EMAIL
-      from_name: formData.name,
-      from_email: formData.email,
-      phone: formData.phone,
-      motivation: formData.motivation,
-      cv_name: formData.cv ? formData.cv.name : "Aucun fichier"
-    };
-
     try {
-      // EmailJS 
-       await emailjs.send(
-         'YOUR_SERVICE_ID',
-         'YOUR_TEMPLATE_ID',
-         emailData,
-         'YOUR_PUBLIC_KEY'
-       );
+      // Convertir les fichiers en Base64
+      const cvBase64 = formData.cv ? await fileToBase64(formData.cv) : null;
+      const motivationLetterBase64 = formData.motivationLetter ? await fileToBase64(formData.motivationLetter) : null;
 
-      // Simulation d'envoi (RETIREZ CETTE LIGNE en production)
-      console.log("Candidature envoyée :", emailData);
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Préparation des données pour l'email
+      const emailData = {
+        to_email: "ilyaskhyari1@gmail.com",
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        motivation: formData.motivation,
+        cv_name: formData.cv ? formData.cv.name : "Aucun fichier",
+        cv_file: cvBase64,
+        motivation_letter_name: formData.motivationLetter ? formData.motivationLetter.name : "Aucun",
+        motivation_letter_file: motivationLetterBase64 || ""
+      };
+
+      // EmailJS - REMPLACEZ PAR VOS IDENTIFIANTS
+      await emailjs.send(
+        'XXXXX_XXXXX',      // ← Remplacez par votre Service ID
+        'XXXXX_XXXXX',     // ← Remplacez par votre Template ID
+        emailData,
+        'XXXXX_XXXXX'       // ← Remplacez par votre Public Key
+      );
+
+      console.log("Candidature envoyée avec succès!");
       
       setSuccess(true);
       setShowPopup(true);

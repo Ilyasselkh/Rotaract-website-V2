@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
+
 export const metadata = {
   title: 'Rotaract Club Casablanca',
   description: 'Site officiel du Rotaract Club Casablanca',

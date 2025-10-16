@@ -34,6 +34,7 @@ export default function RotaractHome() {
 
     return () => {
       if (statsRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(statsRef.current);
       }
     };
@@ -55,6 +56,7 @@ export default function RotaractHome() {
 
     return () => {
       if (floatingCardRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(floatingCardRef.current);
       }
     };
@@ -325,9 +327,6 @@ export default function RotaractHome() {
                 <button className="group px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2">
                   Contactez-nous
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="px-8 py-4 border-2 border-pink-300 text-pink-600 font-bold rounded-full transition-all duration-300 hover:bg-pink-50 hover:scale-105">
-                  Nos Clubs
                 </button>
               </div>
             </div>
