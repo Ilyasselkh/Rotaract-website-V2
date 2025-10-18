@@ -34,7 +34,6 @@ export default function RotaractHome() {
 
     return () => {
       if (statsRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(statsRef.current);
       }
     };
@@ -56,7 +55,6 @@ export default function RotaractHome() {
 
     return () => {
       if (floatingCardRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(floatingCardRef.current);
       }
     };
@@ -256,7 +254,7 @@ export default function RotaractHome() {
             <div className="relative group">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
                 <Image
-                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=800&fit=crop"
+                  src="/images/Jeunes.jpg"
                   alt="Rotaract Team"
                   width={800}
                   height={800}
@@ -324,10 +322,14 @@ export default function RotaractHome() {
               
               {/* Buttons */}
               <div className="flex flex-wrap gap-4 pt-6">
-                <button className="group px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2">
-                  Contactez-nous
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <button
+  onClick={() => window.location.href = '/contact'}
+  className="group px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-2"
+>
+  Contactez-nous
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</button>
+
               </div>
             </div>
           </div>

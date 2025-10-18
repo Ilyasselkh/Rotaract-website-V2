@@ -37,7 +37,7 @@ export default function MembersPage() {
     },
     {
       id: 3,
-      name: "Malak",
+      name: "Malak Rhoumi",
       role: "Secrétaire Générale",
       status: "secretary",
       email: "secretaire@club.ma",
@@ -89,20 +89,20 @@ export default function MembersPage() {
     },
     {
       id: 7,
-      name: "Aymane",
-      role: "Responsable Communication",
+      name: "Aymen Errabja",
+      role: "Responsable Actions",
       status: "communication",
       email: "communication@club.ma",
       linkedin: "#",
       image: "/images/aymane.jpg",
-      bio: "Marketing digital et réseaux sociaux",
+      bio: "Participation active aux projets",
       joinDate: "2023",
       projects: 11,
-      achievements: "📱 Social Media Pro"
+      achievements: "💡 Innovator"
     },
     {
       id: 8,
-      name: "Ahmed",
+      name: "Ahmed Moussafir",
       role: "Membre Actif",
       status: "member",
       email: "membre1@club.ma",
@@ -115,7 +115,7 @@ export default function MembersPage() {
     },
     {
       id: 9,
-      name: "Rania",
+      name: "Rania Azizi",
       role: "Membre Actif",
       status: "member",
       email: "membre2@club.ma",
@@ -154,7 +154,7 @@ export default function MembersPage() {
     },
     {
       id: 12,
-      name: "Abdeslam eljay",
+      name: "Abdussalam Aljayi",
       role: "Membre Actif",
       status: "member",
       email: "membre5@club.ma",
@@ -245,7 +245,7 @@ export default function MembersPage() {
     },
     {
       id: 19,
-      name: "Anas Ab",
+      name: "Anass Arbib",
       role: "Membre Actif",
       status: "member",
       email: "membre12@club.ma",
