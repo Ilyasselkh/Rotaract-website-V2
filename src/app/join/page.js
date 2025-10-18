@@ -1,7 +1,7 @@
 "use client";
 import emailjs from '@emailjs/browser';
 import React, { useState } from "react";
-import { User, Mail, Phone, FileText, Sparkles, Rocket, Check, AlertCircle } from "lucide-react";
+import { User, Mail, Phone, FileText, Sparkles, Rocket, Check, AlertCircle, MessageSquare } from "lucide-react";
 
 export default function JoinPage() {
   const [formData, setFormData] = useState({
@@ -9,8 +9,6 @@ export default function JoinPage() {
     email: "",
     phone: "",
     motivation: "",
-    cv: null,
-    motivationLetter: null,
   });
   const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState({});
@@ -20,17 +18,10 @@ export default function JoinPage() {
   const [focusedField, setFocusedField] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "cv" || name === "motivationLetter") {
-      setFormData({ ...formData, [name]: files[0] });
-      if (files[0]) {
-        setErrors({ ...errors, [name]: "" });
-      }
-    } else {
-      setFormData({ ...formData, [name]: value });
-      if (value.trim()) {
-        setErrors({ ...errors, [name]: "" });
-      }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    if (value.trim()) {
+      setErrors({ ...errors, [name]: "" });
     }
   };
 
@@ -55,22 +46,8 @@ export default function JoinPage() {
       newErrors.motivation = "La lettre de motivation est requise";
     }
 
-    if (!formData.cv) {
-      newErrors.cv = "Le CV est requis";
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
-  };
-
-  // Fonction pour convertir les fichiers en Base64
-  const fileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
   };
 
   const handleSubmit = async (e) => {
@@ -83,10 +60,6 @@ export default function JoinPage() {
     setIsSubmitting(true);
 
     try {
-      // Convertir les fichiers en Base64
-      const cvBase64 = formData.cv ? await fileToBase64(formData.cv) : null;
-      const motivationLetterBase64 = formData.motivationLetter ? await fileToBase64(formData.motivationLetter) : null;
-
       // Préparation des données pour l'email
       const emailData = {
         to_email: "ilyaskhyari1@gmail.com",
@@ -94,10 +67,6 @@ export default function JoinPage() {
         from_email: formData.email,
         phone: formData.phone,
         motivation: formData.motivation,
-        cv_name: formData.cv ? formData.cv.name : "Aucun fichier",
-        cv_file: cvBase64,
-        motivation_letter_name: formData.motivationLetter ? formData.motivationLetter.name : "Aucun",
-        motivation_letter_file: motivationLetterBase64 || ""
       };
 
       // EmailJS - REMPLACEZ PAR VOS IDENTIFIANTS
@@ -113,11 +82,11 @@ export default function JoinPage() {
       setSuccess(true);
       setShowPopup(true);
       
-      const newConfettis = Array.from({ length: 80 }).map((_, i) => ({
+      const newConfettis = Array.from({ length: 100 }).map((_, i) => ({
         id: i,
         left: Math.random() * 100 + "%",
         background: `hsl(${Math.random() * 60 + 300}, 100%, ${Math.random() * 20 + 60}%)`,
-        size: Math.random() * 12 + 4 + "px",
+        size: Math.random() * 15 + 5 + "px",
         delay: Math.random() * 0.5,
       }));
       setConfettis(newConfettis);
@@ -126,7 +95,7 @@ export default function JoinPage() {
         setSuccess(false);
         setConfettis([]);
         setShowPopup(false);
-        setFormData({ name: "", email: "", phone: "", motivation: "", cv: null, motivationLetter: null });
+        setFormData({ name: "", email: "", phone: "", motivation: "" });
         setErrors({});
       }, 5000);
     } catch (error) {
@@ -138,12 +107,12 @@ export default function JoinPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex justify-center p-4 pt-32 pb-16 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 flex justify-center p-4 pt-32 pb-16 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Grid pattern overlay */}
@@ -151,15 +120,15 @@ export default function JoinPage() {
 
       <div className="relative w-full max-w-2xl">
         {/* Glowing card effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
         
-        <div className="relative bg-slate-900/80 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12">
+        <div className="relative bg-slate-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12">
           {/* Header */}
           <div className="text-center mb-10">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl mb-6 shadow-lg shadow-purple-500/50">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl mb-6 shadow-lg shadow-indigo-500/50">
               <Sparkles className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-5xl font-black bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-3 tracking-tight">
+            <h1 className="text-5xl font-black bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3 tracking-tight">
               Rejoignez-nous
             </h1>
             <p className="text-gray-400 text-lg">
@@ -171,7 +140,7 @@ export default function JoinPage() {
             {/* Name Field */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                <User className="w-4 h-4 text-purple-400" />
+                <User className="w-4 h-4 text-indigo-400" />
                 Nom complet
               </label>
               <div className={`relative transition-all duration-300 ${focusedField === 'name' ? 'scale-[1.02]' : ''}`}>
@@ -184,7 +153,7 @@ export default function JoinPage() {
                   onBlur={() => setFocusedField(null)}
                   required
                   placeholder="Entrez votre nom"
-                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.name ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-300`}
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.name ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 outline-none transition-all duration-300`}
                 />
                 {formData.name && !errors.name && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
@@ -204,7 +173,7 @@ export default function JoinPage() {
             {/* Email Field */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                <Mail className="w-4 h-4 text-pink-400" />
+                <Mail className="w-4 h-4 text-purple-400" />
                 Email
               </label>
               <div className={`relative transition-all duration-300 ${focusedField === 'email' ? 'scale-[1.02]' : ''}`}>
@@ -217,7 +186,7 @@ export default function JoinPage() {
                   onBlur={() => setFocusedField(null)}
                   required
                   placeholder="votre@email.com"
-                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.email ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all duration-300`}
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.email ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 outline-none transition-all duration-300`}
                 />
                 {formData.email && !errors.email && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
@@ -237,7 +206,7 @@ export default function JoinPage() {
             {/* Phone Field */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-400" />
+                <Phone className="w-4 h-4 text-pink-400" />
                 Téléphone
               </label>
               <div className={`relative transition-all duration-300 ${focusedField === 'phone' ? 'scale-[1.02]' : ''}`}>
@@ -249,7 +218,7 @@ export default function JoinPage() {
                   onFocus={() => setFocusedField('phone')}
                   onBlur={() => setFocusedField(null)}
                   placeholder="+212 XXX XXX XXX"
-                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.phone ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none transition-all duration-300`}
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.phone ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-pink-500 focus:ring-4 focus:ring-pink-500/20 outline-none transition-all duration-300`}
                 />
                 {formData.phone && !errors.phone && (
                   <Check className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
@@ -266,72 +235,37 @@ export default function JoinPage() {
               )}
             </div>
 
-
-            {/* CV Upload */}
-            <div className="group">
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                📄 Curriculum Vitae
-              </label>
-              <div className="relative">
-                <input
-                  type="file"
-                  name="cv"
-                  onChange={handleChange}
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
-                  id="cv-upload"
-                />
-                <label
-                  htmlFor="cv-upload"
-                  className={`flex items-center justify-center w-full px-6 py-4 bg-slate-800/50 border-2 border-dashed ${errors.cv ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-gray-400 hover:border-purple-500 hover:text-purple-400 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-slate-800/70`}
-                >
-                  {formData.cv ? (
-                    <span className="flex items-center gap-2 text-purple-400">
-                      <Check className="w-5 h-5" />
-                      {formData.cv.name}
-                    </span>
-                  ) : (
-                    <span>Cliquez pour télécharger votre CV</span>
-                  )}
-                </label>
-              </div>
-              {errors.cv && (
-                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
-                  <AlertCircle className="w-4 h-4" />
-                  {errors.cv}
-                </p>
-              )}
-            </div>
-
-            {/* Motivation Letter Upload (Optional) */}
+            {/* Motivation Letter (Text) */}
             <div className="group">
               <label className="block text-sm font-semibold text-gray-300 mb-2 flex items-center gap-2">
-                📝 Lettre de motivation (fichier)
-                <span className="text-xs text-gray-500 font-normal">(Optionnel)</span>
+                <MessageSquare className="w-4 h-4 text-cyan-400" />
+                Lettre de motivation
               </label>
-              <div className="relative">
-                <input
-                  type="file"
-                  name="motivationLetter"
+              <div className={`relative transition-all duration-300 ${focusedField === 'motivation' ? 'scale-[1.02]' : ''}`}>
+                <textarea
+                  name="motivation"
+                  value={formData.motivation}
                   onChange={handleChange}
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
-                  id="motivation-letter-upload"
+                  onFocus={() => setFocusedField('motivation')}
+                  onBlur={() => setFocusedField(null)}
+                  required
+                  placeholder="Écrivez votre lettre de motivation ici..."
+                  rows={6}
+                  className={`w-full px-6 py-4 bg-slate-800/50 border-2 ${errors.motivation ? 'border-red-500' : 'border-slate-700'} rounded-2xl text-white placeholder-gray-500 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/20 outline-none transition-all duration-300 resize-none`}
                 />
-                <label
-                  htmlFor="motivation-letter-upload"
-                  className="flex items-center justify-center w-full px-6 py-4 bg-slate-800/50 border-2 border-dashed border-slate-700 rounded-2xl text-gray-400 hover:border-blue-500 hover:text-blue-400 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:bg-slate-800/70"
-                >
-                  {formData.motivationLetter ? (
-                    <span className="flex items-center gap-2 text-blue-400">
-                      <Check className="w-5 h-5" />
-                      {formData.motivationLetter.name}
-                    </span>
-                  ) : (
-                    <span>Cliquez pour télécharger votre lettre de motivation</span>
-                  )}
-                </label>
+                {formData.motivation && !errors.motivation && (
+                  <Check className="absolute right-4 top-4 w-5 h-5 text-green-400" />
+                )}
+                {errors.motivation && (
+                  <AlertCircle className="absolute right-4 top-4 w-5 h-5 text-red-400" />
+                )}
               </div>
+              {errors.motivation && (
+                <p className="mt-2 text-sm text-red-400 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  {errors.motivation}
+                </p>
+              )}
             </div>
 
             {/* Submit Error */}
@@ -347,9 +281,9 @@ export default function JoinPage() {
               type="button"
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="group relative w-full py-5 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 rounded-2xl font-bold text-white text-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/50 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="group relative w-full py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-2xl font-bold text-white text-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-indigo-500/50 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative flex items-center justify-center gap-3">
                 {isSubmitting ? (
                   <>
