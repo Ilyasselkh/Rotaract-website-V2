@@ -5,7 +5,7 @@ export default function HeroSection() {
       style={{ backgroundImage: "url('/images/hero.jpg')" }}
     >
       <h1 className="text-5xl font-bold mb-4 bg-black/50 p-4 rounded-xl">
-        Rotaract Club Casablanca
+        Rotaract Sale Bab Lamrissa
       </h1>
       <p className="text-lg bg-black/40 px-4 py-2 rounded-lg">
         Service, Amitié et Leadership au cœur de nos actions 💫

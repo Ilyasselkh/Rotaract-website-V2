@@ -374,15 +374,18 @@ const AboutPage = () => {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-rose-500 transition-colors">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">{event.description}</p>
-                  <div className="flex items-center text-rose-500 font-semibold group-hover:gap-3 gap-2 transition-all">
-                    <span>En savoir plus</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+  <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-rose-500 transition-colors">
+    {event.title}
+  </h3>
+  <p className="text-gray-600 leading-relaxed mb-6">{event.description}</p>
+  <button
+    onClick={() => window.location.href = "/decouvrir"}
+    className="flex items-center text-rose-500 font-semibold group-hover:gap-3 gap-2 transition-all hover:text-rose-600 cursor-pointer"
+  >
+    <span>En savoir plus</span>
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  </button>
+</div>
               </div>
             ))}
           </div>
@@ -422,15 +425,18 @@ const AboutPage = () => {
                   />
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-rose-500 transition-colors">
-                    {event.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">{event.description}</p>
-                  <div className="flex items-center text-rose-500 font-semibold group-hover:gap-3 gap-2 transition-all">
-                    <span>Découvrir</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
+  <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-rose-500 transition-colors">
+    {event.title}
+  </h3>
+  <p className="text-gray-600 leading-relaxed mb-6">{event.description}</p>
+  <button
+    onClick={() => window.location.href = "/decouvrir"}
+    className="flex items-center text-rose-500 font-semibold group-hover:gap-3 gap-2 transition-all hover:text-rose-600 cursor-pointer"
+  >
+    <span>Découvrir</span>
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  </button>
+</div>
               </div>
             ))}
           </div>

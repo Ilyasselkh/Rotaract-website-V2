@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 
 export const metadata = {
-  title: 'Rotaract Club Casablanca',
+  title: 'Rotaract Salé Bab Lamrissa',
   description: 'Site officiel du Rotaract Club Casablanca',
 }
 
