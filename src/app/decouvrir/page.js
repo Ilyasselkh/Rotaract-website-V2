@@ -171,7 +171,7 @@ export default function EventsPage() {
           <div className="text-center mb-20">
             <div className="inline-block mb-6">
               <span className="px-6 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-purple-300 text-sm font-semibold tracking-wider uppercase">
-                Événements à venir
+                Nos Événements
               </span>
             </div>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6">
