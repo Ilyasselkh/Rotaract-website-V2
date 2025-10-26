@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Users, Calendar, Award, Heart, Globe, Lightbulb, HandHeart, BookOpen, Sparkles, ArrowRight, Star, MessageSquare, Quote } from 'lucide-react';
 
 const AboutPage = () => {

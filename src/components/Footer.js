@@ -28,11 +28,11 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-4 text-pink-600">Liens utiles</h3>
           <ul className="space-y-2">
-            <li><Link href="/" className="hover:text-pink-500 transition-colors">Accueil</Link></li>
-            <li><Link href="/about" className="hover:text-pink-500 transition-colors">À propos</Link></li>
-            <li><Link href="/team" className="hover:text-pink-500 transition-colors">Équipe</Link></li>
-            <li><Link href="/join" className="hover:text-pink-500 transition-colors">Devenir membre</Link></li>
-            <li><Link href="/contact" className="hover:text-pink-500 transition-colors">Contact</Link></li>
+            <li><Link href="/" className="hover:text-pink-500 transition-colors">→ Accueil</Link></li>
+            <li><Link href="/about" className="hover:text-pink-500 transition-colors">→ À propos</Link></li>
+            <li><Link href="/team" className="hover:text-pink-500 transition-colors">→ Équipe</Link></li>
+            <li><Link href="/join" className="hover:text-pink-500 transition-colors">→ Devenir membre</Link></li>
+            <li><Link href="/contact" className="hover:text-pink-500 transition-colors">→ Contact</Link></li>
           </ul>
         </div>
 
