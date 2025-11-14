@@ -96,7 +96,7 @@ const AboutPage = () => {
     },
     {
       title: "Journée de sensibilisation au cancer du sein – Octobre Rose 🌸",
-      image: "/images/Cancer.jpg",
+      image: "/images/Externe3.jpg",
       description: "Nos membres se sont réunis pour soutenir la lutte contre le cancer du sein et promouvoir la sensibilisation à cette cause importante. 💗",
       gradient: "from-pink-100 to-rose-100"
     },

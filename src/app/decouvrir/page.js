@@ -11,7 +11,7 @@ const upcomingEvents = [
     location: "Salle de conférence A",
     description:
       "Découvrez les bases de l'intelligence artificielle et du machine learning avec nos experts.",
-    image: "/events/ai1.jpg",
+    image: "/images/ai1.jpg",
     gradient: "from-cyan-500 to-blue-500",
     daysLeft: 8,
   },
@@ -23,7 +23,7 @@ const upcomingEvents = [
     location: "Centre des Congrès, Casablanca",
     description:
       "Le plus grand événement tech de l'année. Conférences, networking et démonstrations.",
-    image: "/events/summit1.jpg",
+    image: "/images/summit1.jpg",
     gradient: "from-yellow-500 to-orange-500",
     daysLeft: 15,
   },
@@ -35,7 +35,7 @@ const upcomingEvents = [
     location: "En ligne",
     description:
       "Protégez votre infrastructure avec les meilleures pratiques en cybersécurité.",
-    image: "/events/cyber1.jpg",
+    image: "/images/cyber1.jpg",
     gradient: "from-red-500 to-pink-500",
     daysLeft: 21,
   },
@@ -50,7 +50,7 @@ const internalEvents = [
     location: "Ferme écologique",
     description:
       "Une journée conviviale à la ferme pour renforcer les liens entre membres et partager un moment de détente en plein air. 🌱",
-    images: ["/events/farm1.jpg", "/events/farm2.jpg", "/events/farm3.jpg"],
+    images: ["/images/farm1.jpg", "/images/farm2.jpg", "/images/farm3.jpg"],
     gradient: "from-green-500 to-emerald-500",
   },
   {
@@ -61,7 +61,7 @@ const internalEvents = [
     location: "Salle de conférence principale",
     description:
       "Réunions mensuelles pour planifier nos actions, partager nos idées et voter les projets à venir.",
-    images: ["/events/assembly1.jpg", "/events/assembly2.jpg", "/events/assembly3.jpg"],
+    images: ["/images/assembly1.jpg", "/images/assembly2.jpg", "/images/assembly3.jpg"],
     gradient: "from-blue-500 to-indigo-500",
   },
 ];
@@ -75,7 +75,7 @@ const externalEvents = [
     location: "Centre communautaire",
     description:
       "Préparation des repas dans une ambiance solidaire et joyeuse avant leur distribution aux personnes dans le besoin. 🍲",
-    images: ["/events/rotaract1.jpg", "/events/rotaract2.jpg", "/events/rotaract3.jpg"],
+    images: ["/images/rotaract1.jpg", "/images/rotaract2.jpg", "/images/rotaract3.jpg"],
     gradient: "from-orange-500 to-red-500",
   },
   {
@@ -86,7 +86,7 @@ const externalEvents = [
     location: "Place publique",
     description:
       "Nos membres se sont réunis pour soutenir la lutte contre le cancer du sein et promouvoir la sensibilisation à cette cause importante. 💗",
-    images: ["/events/octobre1.jpg", "/events/octobre2.jpg", "/events/octobre3.jpg"],
+    images: ["/images/cancer.jpg", "/images/octobre2.jpg", "/images/octobre3.jpg"],
     gradient: "from-pink-500 to-rose-500",
   },
   {
@@ -97,7 +97,7 @@ const externalEvents = [
     location: "Centres de transfusion locaux",
     description:
       "Organisation de campagnes de don de sang en partenariat avec les centres de transfusion locaux.",
-    images: ["/events/blood1.jpg", "/events/blood2.jpg", "/events/blood3.jpg"],
+    images: ["/images/blood1.jpg", "/images/blood2.jpg", "/images/blood3.jpg"],
     gradient: "from-red-600 to-rose-600",
   },
 ];

@@ -99,175 +99,6 @@ export default function MembersPage() {
       joinDate: "2023",
       projects: 11,
       achievements: "💡 Innovator"
-    },
-    {
-      id: 8,
-      name: "Ahmed Moussafir",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre1@club.ma",
-      linkedin: "#",
-      image: "/images/ahmed.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 5,
-      achievements: "🚀 Rising Star"
-    },
-    {
-      id: 9,
-      name: "Rania Azizi",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre2@club.ma",
-      linkedin: "#",
-      image: "/images/malak.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 4,
-      achievements: "🌺 Enthusiast"
-    },
-    {
-      id: 10,
-      name: "Nagham Brahmi",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre3@club.ma",
-      linkedin: "#",
-      image: "/images/aymane-rodi.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 6,
-      achievements: "🎨 Designer"
-    },
-    {
-      id: 11,
-      name: "",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre4@club.ma",
-      linkedin: "#",
-      image: "/images/nagham.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 3,
-      achievements: "💡 Innovator"
-    },
-    {
-      id: 12,
-      name: "Abdussalam Aljayi",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre5@club.ma",
-      linkedin: "#",
-      image: "/images/abdeslam.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 4,
-      achievements: "⚡ Fast Learner"
-    },
-    {
-      id: 13,
-      name: "Nassima",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre6@club.ma",
-      linkedin: "#",
-      image: "/images/nassima.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 5,
-      achievements: "🌟 Bright Future"
-    },
-    {
-      id: 14,
-      name: "Amrou Salmi",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre7@club.ma",
-      linkedin: "#",
-      image: "/images/amrou.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 3,
-      achievements: "🔥 Motivated"
-    },
-    {
-      id: 15,
-      name: "Imad",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre8@club.ma",
-      linkedin: "#",
-      image: "/images/imad.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 4,
-      achievements: "🎯 Goal Oriented"
-    },
-    {
-      id: 16,
-      name: "Yassine",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre9@club.ma",
-      linkedin: "#",
-      image: "/images/yassine.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 6,
-      achievements: "💪 Dedicated"
-    },
-    {
-      id: 17,
-      name: "Med Kdr",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre10@club.ma",
-      linkedin: "#",
-      image: "/images/med-kdr.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 3,
-      achievements: "🌈 Positive Vibe"
-    },
-    {
-      id: 18,
-      name: "Nourane Lahlou",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre11@club.ma",
-      linkedin: "#",
-      image: "/images/mohamed-lahlou.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 5,
-      achievements: "🎓 Scholar"
-    },
-    {
-      id: 19,
-      name: "Anass Arbib",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre12@club.ma",
-      linkedin: "#",
-      image: "/images/anas.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 4,
-      achievements: "🚀 Ambitious"
-    },
-    {
-      id: 20,
-      name: "Aymane Rodi",
-      role: "Membre Actif",
-      status: "member",
-      email: "membre13@club.ma",
-      linkedin: "#",
-      image: "/images/rania.jpg",
-      bio: "Participation active aux projets",
-      joinDate: "2024",
-      projects: 7,
-      achievements: "✨ Creative Mind "
     }
   ];
 
@@ -313,12 +144,6 @@ export default function MembersPage() {
       gradient: "from-pink-400 via-rose-500 to-red-600",
       glow: "shadow-pink-500/50",
       label: "Communication"
-    },
-    member: {
-      icon: Users,
-      gradient: "from-slate-400 via-gray-500 to-zinc-600",
-      glow: "shadow-slate-500/50",
-      label: "Membre Actif"
     }
   };
 
@@ -400,7 +225,6 @@ export default function MembersPage() {
                   <option value="protocol" className="bg-slate-900">⭐ Protocole</option>
                   <option value="staff" className="bg-slate-900">👥 Responsable Effectif</option>
                   <option value="communication" className="bg-slate-900">✨ Communication</option>
-                  <option value="member" className="bg-slate-900">🚀 Membres Actifs</option>
                 </select>
               </div>
             </div>

@@ -71,8 +71,8 @@ export default function JoinPage() {
 
       // EmailJS - REMPLACEZ PAR VOS IDENTIFIANTS
       await emailjs.send(
-        'XXXXX_XXXXX',      // ← Remplacez par votre Service ID
-        'XXXXX_XXXXX',     // ← Remplacez par votre Template ID
+        'service_azm6glc',      // ← Remplacez par votre Service ID
+        'template_m3fo32j',     // ← Remplacez par votre Template ID
         emailData,
         'XXXXX_XXXXX'       // ← Remplacez par votre Public Key
       );
