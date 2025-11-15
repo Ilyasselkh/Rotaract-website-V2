@@ -44,6 +44,17 @@ const upcomingEvents = [
 const internalEvents = [
   {
     id: 1,
+    title: "Booster l’Impact : Jeunesse, Innovation et Solidarité 💡",
+    date: "20 Septembre 2024",
+    time: "14:00 - 17:00",
+    location: "Salle de conférence principale",
+    description:
+      "Réunions mensuelles pour planifier nos actions, partager nos idées et voter les projets à venir.",
+    images: ["/images/Interne1.jpg", "/images/Interne1.jpg", "/images/Interne1.jpg"],
+    gradient: "from-blue-500 to-indigo-500",
+  },
+  {
+    id: 2,
     title: "Sortie à la ferme – Moment de convivialité et d'échange 🌾",
     date: "15 Juin 2024",
     time: "09:00 - 17:00",
@@ -54,7 +65,7 @@ const internalEvents = [
     gradient: "from-green-500 to-emerald-500",
   },
   {
-    id: 2,
+    id: 3,
     title: "Assemblée Générale",
     date: "20 Septembre 2024",
     time: "14:00 - 17:00",
@@ -68,21 +79,10 @@ const internalEvents = [
 
 const externalEvents = [
   {
-    id: 4,
-    title: "Préparation pour la distribution des repas – Action solidaire du Rotaract 🤝",
-    date: "10 Décembre 2024",
-    time: "08:00 - 14:00",
-    location: "Centre communautaire",
-    description:
-      "Nos membres se sont mobilisés pour cuisiner ensemble, chacun apportant son énergie, son soutien et sa bonne humeur afin de préparer des repas chauds et équilibrés. Cette initiative a été l’occasion de partager un vrai moment de convivialité tout en travaillant pour une cause essentielle : offrir un peu de réconfort à ceux qui traversent des moments difficiles. Grâce à cet esprit d’équipe et à l’engagement de tous, nous avons pu apporter non seulement de la nourriture, mais aussi un geste de compassion et de proximité humaine à notre communauté.",
-    images: ["/images/Externe4.jpg", "/images/.jpg", "/images/.jpg"],
-    gradient: "from-orange-500 to-red-500",
-  },
-  {
     id: 5,
     title: "Journée de sensibilisation au cancer du sein – Octobre Rose 🎀",
     date: "27 Octobre 2024",
-    time: "16:00",
+    time: "À partir de 16:00",
     location: "Villa Sbihi - salé",
     description:
       "À travers cette action, nous avons rappelé l’importance du dépistage précoce et du soutien aux personnes touchées par la maladie. Nos bénévoles se sont mobilisés pour informer, accompagner et encourager la communauté à adopter les bons réflexes de prévention. Ce moment d’échange et de solidarité a permis de renforcer la conscience collective autour de cette cause qui touche tant de familles. Une initiative forte et engagée, empreinte d’humanité, de soutien et d’espoir.",
@@ -90,14 +90,25 @@ const externalEvents = [
     gradient: "from-pink-500 to-rose-500",
   },
   {
+    id: 4,
+    title: "Préparation pour la distribution des repas – Action solidaire du Rotaract 🤝",
+    date: "10 Décembre 2024",
+    time: "Journée entière",
+    location: "Centre communautaire",
+    description:
+      "Nos membres se sont mobilisés pour cuisiner ensemble, chacun apportant son énergie, son soutien et sa bonne humeur afin de préparer des repas chauds et équilibrés. Cette initiative a été l’occasion de partager un vrai moment de convivialité tout en travaillant pour une cause essentielle : offrir un peu de réconfort à ceux qui traversent des moments difficiles. Grâce à cet esprit d’équipe et à l’engagement de tous, nous avons pu apporter non seulement de la nourriture, mais aussi un geste de compassion et de proximité humaine à notre communauté.",
+    images: ["/images/Externe4.jpg", "/images/.jpg", "/images/.jpg"],
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
     id: 6,
     title: "Journée de mobilisation pour le don de sang – Ensemble pour sauver des vies ❤️",
-    date: "5 Novembre 2024",
-    time: "09:00 - 16:00",
-    location: "Centres de transfusion locaux",
+    date: "04 Novembre 2025",
+    time: "09:00 - 14:00",
+    location: "Centre de transfusion Al Irfane",
     description:
       "Cette initiative a permis de rappeler que le don de sang reste un acte essentiel et accessible à tous, capable d’apporter une seconde chance aux personnes en situation d’urgence. Grâce à la mobilisation de nos bénévoles, nous avons pu informer, accompagner et rassurer les donneurs tout au long de la collecte. Ce moment de solidarité a renforcé notre engagement envers la santé publique et a démontré une fois de plus que, lorsqu’une communauté se mobilise, elle peut réellement faire la différence. Une action humaine, porteuse d’espoir et de vie.",
-    images: ["/images/.jpg", "/images/.jpg", "/images/.jpg"],
+    images: ["/images/Externe5.jpg", "/images/Externe6.jpg", "/images/Externe7.jpg"],
     gradient: "from-red-600 to-rose-600",
   },
 ];

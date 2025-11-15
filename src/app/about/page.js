@@ -68,9 +68,9 @@ const AboutPage = () => {
 
   const eventsInternes = [
     {
-      title: "",
-      image: "",
-      description: "",
+      title: "Booster l’Impact : Jeunesse, Innovation et Solidarité 💡",
+      image: "/images/Interne2.jpg",
+      description: "Une journée conviviale pour rassembler les membres du Rotary et du Rotaract, partager des idées et renforcer nos liens. 🤝",
       gradient: "from-pink-100 to-rose-100"
     },
     {
@@ -80,7 +80,7 @@ const AboutPage = () => {
       gradient: "from-rose-100 to-pink-100"
     },
     {
-      title: "Assemblée Générale",
+      title: "Assemblée Générale – Temps d’échange et de décisions importantes 📝",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80",
       description: "Réunions mensuelles pour planifier nos actions, partager nos idées et voter les projets à venir.",
       gradient: "from-pink-50 to-rose-50"
@@ -202,7 +202,7 @@ const AboutPage = () => {
               <div className="relative bg-gradient-to-br from-pink-50 to-rose-50 p-2 rounded-[3rem] shadow-2xl overflow-hidden">
                 <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px]">
                   <Image 
-                    src="/images/QuiRotaract.jpg" 
+                    src="/images/QiuRotaract.jpg" 
                     alt="Rotaract Team"
                     fill
                     className="rounded-[2.5rem] object-cover shadow-xl"

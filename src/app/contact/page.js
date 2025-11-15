@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { MapPin, Phone, Mail, Clock, Send, MessageSquare, Globe, Facebook, Twitter, Linkedin, Instagram, Star, X, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare, Globe, Facebook, Twitter, Linkedin, Instagram, Star, X, CheckCircle, CreditCard } from "lucide-react";
 
 export default function ContactPage() {
   const [commentData, setCommentData] = useState({
@@ -71,17 +71,17 @@ export default function ContactPage() {
       bgColor: "bg-purple-500/10",
     },
     {
-      icon: Phone,
-      title: "Téléphone",
-      info: "+212 5XX-XXXXXX",
-      subInfo: "Lun - Ven, 9h - 18h",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-500/10",
-    },
+      icon: CreditCard, // ou une icône représentant un compte bancaire
+      title: "RIB",
+      info: "230 810 3960768211005600 18", // ton numéro de RIB
+      subInfo: "Banque CIH", // éventuellement la banque ou autre info
+      color: "from-green-500 to-lime-500",
+      bgColor: "bg-green-500/10",
+  },
     {
       icon: Mail,
       title: "Email",
-      info: "contact@entreprise.ma",
+      info: "rotaractalebablamrissaa@gmail.com",
       subInfo: "Réponse sous 24h",
       color: "from-pink-500 to-rose-500",
       bgColor: "bg-pink-500/10",

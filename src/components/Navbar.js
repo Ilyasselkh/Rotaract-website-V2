@@ -14,7 +14,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <Sparkles className="w-6 h-6 text-pink-300 animate-pulse" />
           <span className="text-2xl font-black bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Rotaract Club
+            Rotaract Salé Bab Lamrissa
           </span>
         </Link>
 
