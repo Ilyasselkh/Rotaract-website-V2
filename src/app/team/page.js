@@ -51,7 +51,7 @@ export default function MembersPage() {
     {
       id: 4,
       name: "Salma Adnane",
-      role: "Trésorier",
+      role: "Trésorière",
       status: "treasurer",
       email: "tresorier@club.ma",
       linkedin: "#",
@@ -221,7 +221,7 @@ export default function MembersPage() {
                   <option value="president" className="bg-slate-900">👑 Présidente</option>
                   <option value="vice-president" className="bg-slate-900">🛡️ Vice-Présidente</option>
                   <option value="secretary" className="bg-slate-900">📋 Secrétaire Générale</option>
-                  <option value="treasurer" className="bg-slate-900">💰 Trésorier</option>
+                  <option value="treasurer" className="bg-slate-900">💰 Trésorière</option>
                   <option value="protocol" className="bg-slate-900">⭐ Protocole</option>
                   <option value="staff" className="bg-slate-900">👥 Responsable Effectif</option>
                   <option value="communication" className="bg-slate-900">✨ Communication</option>
