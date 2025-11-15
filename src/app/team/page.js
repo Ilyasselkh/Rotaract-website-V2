@@ -125,7 +125,7 @@ export default function MembersPage() {
       icon: Award,
       gradient: "from-emerald-400 via-green-500 to-teal-600",
       glow: "shadow-green-500/50",
-      label: "Trésorier"
+      label: "Trésorière"
     },
     protocol: {
       icon: Star,
