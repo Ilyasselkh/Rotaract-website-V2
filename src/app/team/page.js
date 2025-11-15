@@ -16,7 +16,7 @@ export default function MembersPage() {
       status: "president",
       email: "presidente@club.ma",
       linkedin: "#",
-      image: "/images/marwa.png",
+      image: "/images/marwa1.jpg",
       bio: "Leadership et vision stratégique du club",
       joinDate: "2024",
       projects: 15,
@@ -31,7 +31,7 @@ export default function MembersPage() {
       linkedin: "#",
       image: "/images/nada.jpg",
       bio: "Soutien et coordination des activités",
-      joinDate: "2022",
+      joinDate: "2024",
       projects: 12,
       achievements: "⭐ Innovation Leader"
     },
@@ -42,9 +42,9 @@ export default function MembersPage() {
       status: "secretary",
       email: "secretaire@club.ma",
       linkedin: "#",
-      image: "/images/iness.jpg",
+      image: "/images/malak.jpg",
       bio: "Organisation et gestion administrative",
-      joinDate: "2023",
+      joinDate: "2024",
       projects: 10,
       achievements: "📋 Best Organizer"
     },
@@ -57,7 +57,7 @@ export default function MembersPage() {
       linkedin: "#",
       image: "/images/salma.jpg",
       bio: "Gestion financière et budgétaire",
-      joinDate: "2023",
+      joinDate: "2024",
       projects: 8,
       achievements: "💰 Financial Expert"
     },
@@ -70,7 +70,7 @@ export default function MembersPage() {
       linkedin: "#",
       image: "/images/hiba.jpg",
       bio: "Coordination des événements officiels",
-      joinDate: "2023",
+      joinDate: "2024",
       projects: 9,
       achievements: "🎭 Event Master"
     },
@@ -83,7 +83,7 @@ export default function MembersPage() {
       linkedin: "#",
       image: "/images/ilyas.jpg",
       bio: "Gestion des membres et recrutement",
-      joinDate: "2023",
+      joinDate: "2024",
       projects: 7,
       achievements: "👥 Team Builder"
     },
@@ -96,7 +96,7 @@ export default function MembersPage() {
       linkedin: "#",
       image: "/images/aymane.jpg",
       bio: "Participation active aux projets",
-      joinDate: "2023",
+      joinDate: "2024",
       projects: 11,
       achievements: "💡 Innovator"
     }

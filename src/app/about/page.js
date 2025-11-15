@@ -101,9 +101,9 @@ const AboutPage = () => {
       gradient: "from-pink-100 to-rose-100"
     },
     {
-      title: "Collecte de Sang",
-      image: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=800&q=80",
-      description: "Organisation de campagnes de don de sang en partenariat avec les centres de transfusion locaux.",
+      title: "Journée de mobilisation pour le don de sang – Ensemble pour sauver des vies ❤️",
+      image: "/images/Externe2.jpg",
+      description: "Nos membres se sont rassemblés pour encourager le don de sang et sensibiliser la communauté à l’importance de ce geste. 🩸",
       gradient: "from-rose-50 to-pink-50"
     }
   ];

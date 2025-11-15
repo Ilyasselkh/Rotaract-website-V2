@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Calendar, MapPin, Clock, X, Image, ArrowRight, Sparkles, Bell } from "lucide-react";
+import { Calendar, MapPin, Clock, X, ArrowRight, Sparkles, Bell, Zap, Star } from "lucide-react";
 
 const upcomingEvents = [
   {
@@ -11,7 +11,7 @@ const upcomingEvents = [
     location: "Salle de conférence A",
     description:
       "Découvrez les bases de l'intelligence artificielle et du machine learning avec nos experts.",
-    image: "/images/ai1.jpg",
+    image: "/images/Jeunes.jpg",
     gradient: "from-cyan-500 to-blue-500",
     daysLeft: 8,
   },
@@ -23,7 +23,7 @@ const upcomingEvents = [
     location: "Centre des Congrès, Casablanca",
     description:
       "Le plus grand événement tech de l'année. Conférences, networking et démonstrations.",
-    image: "/images/summit1.jpg",
+    image: "/images/marwa.jpg",
     gradient: "from-yellow-500 to-orange-500",
     daysLeft: 15,
   },
@@ -35,7 +35,7 @@ const upcomingEvents = [
     location: "En ligne",
     description:
       "Protégez votre infrastructure avec les meilleures pratiques en cybersécurité.",
-    image: "/images/cyber1.jpg",
+    image: "/images/QiuRotaract.jpg",
     gradient: "from-red-500 to-pink-500",
     daysLeft: 21,
   },
@@ -49,8 +49,8 @@ const internalEvents = [
     time: "09:00 - 17:00",
     location: "Ferme écologique",
     description:
-      "Une journée conviviale à la ferme pour renforcer les liens entre membres et partager un moment de détente en plein air. 🌱",
-    images: ["/images/farm1.jpg", "/images/farm2.jpg", "/images/farm3.jpg"],
+      "Cette sortie a permis à nos membres de se retrouver dans un cadre naturel, propice à la relaxation et aux échanges authentiques. Entre activités agricoles, balades et moments de partage, chacun a pu profiter d’une parenthèse loin du quotidien. Cette journée a renforcé l’esprit d’équipe, favorisé la cohésion du groupe et créé de nouveaux souvenirs communs, le tout dans une atmosphère chaleureuse et pleine de bonne humeur. Une expérience simple, naturelle et riche en convivialité.",
+    images: ["/images/Interne1.jpg", "/images/Interne1.jpg", "/images/Interne1.jpg"],
     gradient: "from-green-500 to-emerald-500",
   },
   {
@@ -61,7 +61,7 @@ const internalEvents = [
     location: "Salle de conférence principale",
     description:
       "Réunions mensuelles pour planifier nos actions, partager nos idées et voter les projets à venir.",
-    images: ["/images/assembly1.jpg", "/images/assembly2.jpg", "/images/assembly3.jpg"],
+    images: ["/images/Interne1.jpg", "/images/Interne1.jpg", "/images/Interne1.jpg"],
     gradient: "from-blue-500 to-indigo-500",
   },
 ];
@@ -74,30 +74,30 @@ const externalEvents = [
     time: "08:00 - 14:00",
     location: "Centre communautaire",
     description:
-      "Préparation des repas dans une ambiance solidaire et joyeuse avant leur distribution aux personnes dans le besoin. 🍲",
-    images: ["/images/rotaract1.jpg", "/images/rotaract2.jpg", "/images/rotaract3.jpg"],
+      "Nos membres se sont mobilisés pour cuisiner ensemble, chacun apportant son énergie, son soutien et sa bonne humeur afin de préparer des repas chauds et équilibrés. Cette initiative a été l’occasion de partager un vrai moment de convivialité tout en travaillant pour une cause essentielle : offrir un peu de réconfort à ceux qui traversent des moments difficiles. Grâce à cet esprit d’équipe et à l’engagement de tous, nous avons pu apporter non seulement de la nourriture, mais aussi un geste de compassion et de proximité humaine à notre communauté.",
+    images: ["/images/Externe4.jpg", "/images/.jpg", "/images/.jpg"],
     gradient: "from-orange-500 to-red-500",
   },
   {
     id: 5,
     title: "Journée de sensibilisation au cancer du sein – Octobre Rose 🎀",
-    date: "15 Octobre 2024",
-    time: "10:00 - 18:00",
-    location: "Place publique",
+    date: "27 Octobre 2024",
+    time: "16:00",
+    location: "Villa Sbihi - salé",
     description:
-      "Nos membres se sont réunis pour soutenir la lutte contre le cancer du sein et promouvoir la sensibilisation à cette cause importante. 💗",
-    images: ["/images/cancer.jpg", "/images/octobre2.jpg", "/images/octobre3.jpg"],
+      "À travers cette action, nous avons rappelé l’importance du dépistage précoce et du soutien aux personnes touchées par la maladie. Nos bénévoles se sont mobilisés pour informer, accompagner et encourager la communauté à adopter les bons réflexes de prévention. Ce moment d’échange et de solidarité a permis de renforcer la conscience collective autour de cette cause qui touche tant de familles. Une initiative forte et engagée, empreinte d’humanité, de soutien et d’espoir.",
+    images: ["/images/octobre1.jpg", "/images/octobre2.jpg", "/images/octobre3.jpg"],
     gradient: "from-pink-500 to-rose-500",
   },
   {
     id: 6,
-    title: "Collecte de Sang",
+    title: "Journée de mobilisation pour le don de sang – Ensemble pour sauver des vies ❤️",
     date: "5 Novembre 2024",
     time: "09:00 - 16:00",
     location: "Centres de transfusion locaux",
     description:
-      "Organisation de campagnes de don de sang en partenariat avec les centres de transfusion locaux.",
-    images: ["/images/blood1.jpg", "/images/blood2.jpg", "/images/blood3.jpg"],
+      "Cette initiative a permis de rappeler que le don de sang reste un acte essentiel et accessible à tous, capable d’apporter une seconde chance aux personnes en situation d’urgence. Grâce à la mobilisation de nos bénévoles, nous avons pu informer, accompagner et rassurer les donneurs tout au long de la collecte. Ce moment de solidarité a renforcé notre engagement envers la santé publique et a démontré une fois de plus que, lorsqu’une communauté se mobilise, elle peut réellement faire la différence. Une action humaine, porteuse d’espoir et de vie.",
+    images: ["/images/.jpg", "/images/.jpg", "/images/.jpg"],
     gradient: "from-red-600 to-rose-600",
   },
 ];
@@ -119,63 +119,99 @@ export default function EventsPage() {
 
   const UpcomingEventCard = ({ event }) => (
     <div
-      className="group relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transform transition-all duration-500 hover:scale-105 cursor-pointer"
+      className="group relative overflow-hidden cursor-pointer"
       onClick={() => openModal(event)}
     >
-      {/* Image */}
-      <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-30`}></div>
-        <div className="w-full h-full flex items-center justify-center text-gray-400 bg-gray-100">
-          <Image className="w-16 h-16 sm:w-20 sm:h-20" />
-        </div>
-        
-        {/* Days Left Badge */}
-        {event.daysLeft && (
-          <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-2 bg-white/95 backdrop-blur-sm rounded-full shadow-lg">
-            <Bell className="w-4 h-4 text-yellow-500" />
-            <span className="text-sm font-bold text-gray-800">{event.daysLeft} jours</span>
-          </div>
-        )}
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-      </div>
-
-      {/* Content */}
-      <div className="p-5 sm:p-6">
-        <span className={`inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-gradient-to-r ${event.gradient} text-white shadow-md mb-3`}>
-          À venir
-        </span>
-        
-        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-gray-900 group-hover:to-gray-600">
-          {event.title}
-        </h3>
-
-        {/* Info */}
-        <div className="space-y-2.5 mb-4">
-          <div className="flex items-center gap-2.5 text-gray-600">
-            <Calendar className="w-4 h-4 flex-shrink-0" />
-            <span className="text-sm font-medium">{event.date}</span>
-          </div>
-          <div className="flex items-center gap-2.5 text-gray-600">
-            <Clock className="w-4 h-4 flex-shrink-0" />
-            <span className="text-sm font-medium">{event.time}</span>
-          </div>
-          <div className="flex items-center gap-2.5 text-gray-600">
-            <MapPin className="w-4 h-4 flex-shrink-0" />
-            <span className="text-sm font-medium truncate">{event.location}</span>
-          </div>
+      {/* Glassmorphism Card */}
+      <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-700 hover:scale-[1.02] hover:border-white/30">
+        {/* Animated Gradient Border */}
+        <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700`}>
+          <div className={`absolute inset-0 bg-gradient-to-r ${event.gradient} opacity-20 blur-xl`}></div>
         </div>
 
-        {/* Description */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">
-          {event.description}
-        </p>
+        {/* Image Section */}
+        <div className="relative h-64 overflow-hidden">
+          <img 
+            src={event.image}
+            alt={event.title}
+            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop`;
+            }}
+          />
+          
+          {/* Gradient Overlay */}
+          <div className={`absolute inset-0 bg-gradient-to-t ${event.gradient} opacity-60 mix-blend-multiply`}></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+          
+          {/* Floating Badge */}
+          {event.daysLeft && (
+            <div className="absolute top-6 right-6 backdrop-blur-2xl bg-white/10 border border-white/20 rounded-2xl px-4 py-2.5 shadow-2xl">
+              <div className="flex items-center gap-2">
+                <div className="relative">
+                  <Bell className="w-4 h-4 text-yellow-400 animate-bounce" />
+                  <div className="absolute inset-0 bg-yellow-400/30 rounded-full blur-md animate-pulse"></div>
+                </div>
+                <span className="text-white font-bold text-sm">{event.daysLeft} jours</span>
+              </div>
+            </div>
+          )}
 
-        {/* CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <span className="text-sm font-semibold text-gray-500">En savoir plus</span>
-          <ArrowRight className={`w-5 h-5 text-gray-400 group-hover:text-${event.gradient.split('-')[1]}-500 group-hover:translate-x-2 transition-all duration-300`} />
+          {/* Category Badge */}
+          <div className="absolute top-6 left-6">
+            <div className={`backdrop-blur-xl bg-gradient-to-r ${event.gradient} px-4 py-2 rounded-full border border-white/30 shadow-2xl`}>
+              <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center gap-2">
+                <Zap className="w-3 h-3" />
+                À venir
+              </span>
+            </div>
+          </div>
+
+          {/* Title Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+            <h3 className="text-2xl font-black text-white mb-2 line-clamp-2 drop-shadow-2xl">
+              {event.title}
+            </h3>
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="p-6 space-y-4">
+          {/* Info Pills */}
+          <div className="flex flex-wrap gap-2">
+            <div className="flex items-center gap-2 px-3 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+              <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="text-xs text-gray-300 font-medium">{event.date}</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
+              <Clock className="w-3.5 h-3.5 text-purple-400" />
+              <span className="text-xs text-gray-300 font-medium">{event.time}</span>
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="flex items-start gap-3">
+            <div className={`p-2 rounded-xl bg-gradient-to-br ${event.gradient} bg-opacity-20 border border-white/10 flex-shrink-0`}>
+              <MapPin className="w-4 h-4 text-white" />
+            </div>
+            <span className="text-sm text-gray-400 font-medium line-clamp-2">{event.location}</span>
+          </div>
+
+          {/* Description */}
+          <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">
+            {event.description}
+          </p>
+
+          {/* CTA Button */}
+          <div className="pt-4">
+            <div className={`group/btn relative overflow-hidden bg-gradient-to-r ${event.gradient} rounded-2xl p-[2px] transition-all duration-300 hover:shadow-2xl hover:shadow-${event.gradient.split('-')[1]}-500/50`}>
+              <div className="bg-gray-900 rounded-2xl px-6 py-3 flex items-center justify-between group-hover/btn:bg-transparent transition-all duration-300">
+                <span className="text-white font-bold text-sm">Découvrir</span>
+                <ArrowRight className="w-5 h-5 text-white group-hover/btn:translate-x-2 transition-transform duration-300" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -183,110 +219,149 @@ export default function EventsPage() {
 
   const EventCard = ({ event, isInternal }) => (
     <div
-      className="group relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transform transition-all duration-500 hover:scale-105"
+      className="group relative cursor-pointer"
       onClick={() => openModal(event)}
       onMouseEnter={() => setHoveredCard(event.id)}
       onMouseLeave={() => setHoveredCard(null)}
     >
-      {/* Gradient Overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-      
-      {/* Animated Border */}
-      <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 border-transparent group-hover:border-white/30 transition-all duration-500"></div>
-      
-      {/* Content */}
-      <div className="relative p-4 sm:p-6 lg:p-8">
-        {/* Badge & Days Left */}
-        <div className="flex justify-between items-start mb-4 sm:mb-6">
-          <span className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-bold tracking-wider uppercase bg-gradient-to-r ${event.gradient} text-white shadow-lg`}>
-            {isInternal ? "Interne" : "Externe"}
-          </span>
-          <Sparkles className={`w-4 h-4 sm:w-5 sm:h-5 text-white/60 transition-all duration-300 ${hoveredCard === event.id ? 'rotate-12 scale-110' : ''}`} />
+      {/* Card Container */}
+      <div className="relative h-full bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden transition-all duration-700 hover:scale-[1.02] hover:border-white/30">
+        {/* Animated Background */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${event.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+        
+        {/* Mesh Gradient Effect */}
+        <div className="absolute inset-0 opacity-30">
+          <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${event.gradient} rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700`}></div>
+          <div className={`absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr ${event.gradient} rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700`}></div>
         </div>
 
-        {/* Title */}
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-4 sm:mb-6 line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
-          {event.title}
-        </h3>
+        {/* Content */}
+        <div className="relative p-8 space-y-6">
+          {/* Header */}
+          <div className="flex justify-between items-start">
+            <div className={`backdrop-blur-xl bg-gradient-to-r ${event.gradient} px-4 py-2 rounded-full border border-white/30 shadow-xl`}>
+              <span className="text-white font-bold text-xs tracking-wider uppercase flex items-center gap-2">
+                <Star className="w-3 h-3" />
+                {isInternal ? "Interne" : "Externe"}
+              </span>
+            </div>
+            <Sparkles className={`w-6 h-6 text-white/60 transition-all duration-500 ${hoveredCard === event.id ? 'rotate-180 scale-125 text-white' : ''}`} />
+          </div>
 
-        {/* Info Grid */}
-        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-          <div className="flex items-center gap-2 sm:gap-3 text-gray-300 group-hover:text-white transition-colors">
-            <div className={`p-1.5 sm:p-2 rounded-lg bg-gradient-to-br ${event.gradient} bg-opacity-20`}>
-              <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+          {/* Title */}
+          <h3 className="text-2xl font-black text-white line-clamp-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+            {event.title}
+          </h3>
+
+          {/* Info Cards */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 group-hover:bg-white/10 transition-all">
+              <div className={`p-2 rounded-xl bg-gradient-to-br ${event.gradient} shadow-lg`}>
+                <Calendar className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm text-gray-300 font-medium">{event.date}</span>
             </div>
-            <span className="text-xs sm:text-sm font-medium truncate">{event.date}</span>
+            
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 group-hover:bg-white/10 transition-all">
+              <div className={`p-2 rounded-xl bg-gradient-to-br ${event.gradient} shadow-lg`}>
+                <Clock className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm text-gray-300 font-medium">{event.time}</span>
+            </div>
+            
+            <div className="flex items-center gap-3 bg-white/5 backdrop-blur-sm rounded-2xl p-3 border border-white/10 group-hover:bg-white/10 transition-all">
+              <div className={`p-2 rounded-xl bg-gradient-to-br ${event.gradient} shadow-lg`}>
+                <MapPin className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-sm text-gray-300 font-medium line-clamp-1">{event.location}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3 text-gray-300 group-hover:text-white transition-colors">
-            <div className={`p-1.5 sm:p-2 rounded-lg bg-gradient-to-br ${event.gradient} bg-opacity-20`}>
-              <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+
+          {/* Photos Badge */}
+          <div className="flex items-center justify-between pt-4 border-t border-white/10">
+            <div className="flex items-center gap-2 text-gray-400">
+              <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium">3 photos</span>
             </div>
-            <span className="text-xs sm:text-sm font-medium truncate">{event.time}</span>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-3 text-gray-300 group-hover:text-white transition-colors">
-            <div className={`p-1.5 sm:p-2 rounded-lg bg-gradient-to-br ${event.gradient} bg-opacity-20`}>
-              <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-            </div>
-            <span className="text-xs sm:text-sm font-medium truncate">{event.location}</span>
+            <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
           </div>
         </div>
 
-        {/* CTA */}
-        <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-700">
-          <div className="flex items-center gap-1.5 sm:gap-2 text-gray-400 text-xs sm:text-sm">
-            <Image className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span>3 photos</span>
-          </div>
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
+        {/* Shine Effect */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 transform translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
         </div>
-      </div>
-
-      {/* Shine Effect */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 transform translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
       </div>
     </div>
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute top-1/2 left-1/2 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Advanced Background */}
+      <div className="absolute inset-0">
+        {/* Gradient Mesh */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950/20 via-black to-blue-950/20"></div>
+        
+        {/* Animated Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]"></div>
       </div>
 
-      <main className="relative pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+      <main className="relative pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <div className="inline-block mb-4 sm:mb-6">
-              <span className="px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-full text-purple-300 text-xs sm:text-sm font-semibold tracking-wider uppercase">
-                Nos Événements
-              </span>
+          {/* Hero Header */}
+          <div className="text-center mb-20 space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl">
+              <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+              <span className="text-purple-300 text-sm font-bold tracking-wider uppercase">Nos Événements</span>
+              <Sparkles className="w-4 h-4 text-purple-400" />
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 sm:mb-6 px-4">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-gradient">
+
+            {/* Main Title */}
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black">
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 animate-gradient pb-4">
                 Rejoignez-nous
               </span>
             </h1>
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed px-4">
-              Découvrez nos événements exclusifs et participez à des expériences inoubliables
+
+            {/* Subtitle */}
+            <p className="text-gray-400 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed">
+              Découvrez nos événements exclusifs et participez à des{" "}
+              <span className="text-white font-semibold">expériences inoubliables</span>
             </p>
+
+            {/* Decorative Line */}
+            <div className="flex items-center justify-center gap-3">
+              <div className="h-[2px] w-12 bg-gradient-to-r from-transparent to-purple-500"></div>
+              <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+              <div className="h-[2px] w-12 bg-gradient-to-l from-transparent to-pink-500"></div>
+            </div>
           </div>
 
           {/* Upcoming Events */}
-          <section className="mb-16 sm:mb-20 lg:mb-24">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-10">
-              <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-cyan-500 to-yellow-500 rounded-full"></div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Événements à Venir</h2>
-              <div className="flex items-center gap-2 px-3 py-1.5 bg-yellow-500/20 rounded-full w-fit">
+          <section className="mb-32">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-yellow-500 rounded-full animate-pulse"></div>
+                <h2 className="text-4xl lg:text-5xl font-black text-white">Événements à Venir</h2>
+              </div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-yellow-500/10 backdrop-blur-sm border border-yellow-500/20 rounded-full">
                 <Bell className="w-4 h-4 text-yellow-400 animate-bounce" />
-                <span className="text-yellow-400 text-xs sm:text-sm font-semibold">Nouveaux</span>
+                <span className="text-yellow-400 text-sm font-bold">Nouveaux</span>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {upcomingEvents.map((event) => (
                 <UpcomingEventCard key={event.id} event={event} />
               ))}
@@ -294,18 +369,20 @@ export default function EventsPage() {
           </section>
 
           {/* Internal Events */}
-          <section className="mb-16 sm:mb-20 lg:mb-24">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-10">
-              <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+          <section className="mb-32">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full animate-pulse"></div>
+              <h2 className="text-4xl lg:text-5xl font-black">
                 <span className="text-white">Événements </span>
-                <span className="text-pink-500">Internes</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">Internes</span>
               </h2>
             </div>
-            <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-3xl">
-              Des activités dédiées au développement et à la cohésion de notre équipe
+            <p className="text-gray-400 text-lg mb-12 max-w-3xl">
+              Des activités dédiées au{" "}
+              <span className="text-white font-semibold">développement et à la cohésion</span>{" "}
+              de notre équipe
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {internalEvents.map((event) => (
                 <EventCard key={event.id} event={event} isInternal={true} />
               ))}
@@ -314,24 +391,24 @@ export default function EventsPage() {
 
           {/* External Events */}
           <section>
-            <div className="mb-6 sm:mb-8 lg:mb-10">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <span className="px-4 py-2 bg-pink-500/20 backdrop-blur-sm border border-pink-500/30 rounded-full text-pink-300 text-xs font-semibold tracking-wider uppercase">
-                  🎀 Pour la communauté
-                </span>
+            <div className="text-center mb-12 space-y-6">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-pink-500/10 backdrop-blur-xl border border-pink-500/20 rounded-full">
+                <span className="text-2xl">🎀</span>
+                <span className="text-pink-300 text-sm font-bold tracking-wider uppercase">Pour la communauté</span>
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 justify-center sm:justify-start">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full mx-auto sm:mx-0"></div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center sm:text-left">
+              <div className="flex items-center justify-center gap-3">
+                <div className="w-3 h-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full animate-pulse"></div>
+                <h2 className="text-4xl lg:text-5xl font-black">
                   <span className="text-white">Événements </span>
-                  <span className="text-pink-500">Externes</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">Externes</span>
                 </h2>
               </div>
             </div>
-            <p className="text-gray-400 text-sm sm:text-base mb-8 max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
-              Nos actions au service de la communauté et de l&apos;environnement
+            <p className="text-gray-400 text-lg mb-12 max-w-3xl mx-auto text-center">
+              Nos actions au service de la{" "}
+              <span className="text-white font-semibold">communauté et de l&apos;environnement</span>
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {externalEvents.map((event) => (
                 <EventCard key={event.id} event={event} isInternal={false} />
               ))}
@@ -343,75 +420,112 @@ export default function EventsPage() {
       {/* Modal */}
       {isModalOpen && selectedEvent && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-xl z-50 flex items-center justify-center p-2 sm:p-4 animate-fadeIn"
+          className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-50 flex items-center justify-center p-4 animate-fadeIn"
           onClick={closeModal}
         >
           <div
-            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl sm:rounded-3xl max-w-5xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl border border-white/10 animate-scaleIn"
+            className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-2xl rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl animate-scaleIn"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
+            {/* Background Effects */}
+            <div className={`absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${selectedEvent.gradient} opacity-20 blur-3xl rounded-full`}></div>
+            
+            <div className="relative p-8 lg:p-12">
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-6 right-6 z-10 p-3 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:rotate-90 transition-all duration-300"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
               {/* Header */}
-              <div className="flex justify-between items-start mb-6 sm:mb-8 gap-4">
-                <div className="flex-1 min-w-0">
-                  <span className={`inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-bold tracking-wider uppercase bg-gradient-to-r ${selectedEvent.gradient} text-white shadow-lg mb-3 sm:mb-4`}>
+              <div className="mb-8 space-y-6">
+                <div className={`inline-flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r ${selectedEvent.gradient} rounded-full border border-white/30 shadow-xl`}>
+                  <Sparkles className="w-4 h-4 text-white" />
+                  <span className="text-white font-bold text-sm tracking-wider uppercase">
                     Détails de l&apos;événement
                   </span>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 break-words">
-                    {selectedEvent.title}
-                  </h2>
-                  <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 lg:gap-6 text-gray-300">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} bg-opacity-20 flex-shrink-0`}>
-                        <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                      <span className="font-medium text-sm sm:text-base truncate">{selectedEvent.date}</span>
+                </div>
+
+                <h2 className="text-4xl lg:text-5xl font-black text-white">
+                  {selectedEvent.title}
+                </h2>
+
+                {/* Info Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} shadow-lg`}>
+                      <Calendar className="w-5 h-5 text-white" />
                     </div>
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} bg-opacity-20 flex-shrink-0`}>
-                        <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                      <span className="font-medium text-sm sm:text-base truncate">{selectedEvent.time}</span>
+                    <div>
+                      <div className="text-xs text-gray-500 font-medium mb-1">Date</div>
+                      <div className="text-white font-bold text-sm">{selectedEvent.date}</div>
                     </div>
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} bg-opacity-20 flex-shrink-0`}>
-                        <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </div>
-                      <span className="font-medium text-sm sm:text-base break-words">{selectedEvent.location}</span>
+                  </div>
+
+                  <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} shadow-lg`}>
+                      <Clock className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 font-medium mb-1">Horaire</div>
+                      <div className="text-white font-bold text-sm">{selectedEvent.time}</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${selectedEvent.gradient} shadow-lg`}>
+                      <MapPin className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500 font-medium mb-1">Lieu</div>
+                      <div className="text-white font-bold text-sm line-clamp-1">{selectedEvent.location}</div>
                     </div>
                   </div>
                 </div>
-                <button
-                  onClick={closeModal}
-                  className="p-2 sm:p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300 hover:rotate-90 flex-shrink-0"
-                >
-                  <X className="w-5 h-5 sm:w-6 sm:h-6" />
-                </button>
               </div>
 
-              {/* Images Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                {(selectedEvent.images || [selectedEvent.image]).map((image, index) => (
-                  <div 
-                    key={index} 
-                    className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden bg-gray-700/50 border border-white/10 group"
-                  >
-                    <div className="w-full h-full flex items-center justify-center text-gray-500 group-hover:scale-110 transition-transform duration-500">
-                      <Image className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+              {/* Images Gallery */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                  <div className={`w-1.5 h-8 rounded-full bg-gradient-to-b ${selectedEvent.gradient}`}></div>
+                  Galerie Photos
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {(selectedEvent.images || [selectedEvent.image]).map((image, index) => (
+                    <div 
+                      key={index} 
+                      className="group relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-gray-800/50"
+                    >
+                      <img
+                        src={image}
+                        alt={`${selectedEvent.title} - Photo ${index + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               {/* Description */}
-              <div className={`bg-gradient-to-br ${selectedEvent.gradient} bg-opacity-10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10`}>
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-                  <div className={`w-1.5 sm:w-2 h-6 sm:h-8 rounded-full bg-gradient-to-b ${selectedEvent.gradient} flex-shrink-0`}></div>
-                  Description
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
-                  {selectedEvent.description}
-                </p>
+              <div className={`relative bg-gradient-to-br ${selectedEvent.gradient} bg-opacity-10 backdrop-blur-xl rounded-2xl p-8 border border-white/10 overflow-hidden`}>
+                <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${selectedEvent.gradient} opacity-20 blur-3xl rounded-full`}></div>
+                
+                <div className="relative">
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                    <div className={`w-2 h-10 rounded-full bg-gradient-to-b ${selectedEvent.gradient}`}></div>
+                    Description
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    {selectedEvent.description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -425,7 +539,7 @@ export default function EventsPage() {
         }
         .animate-gradient {
           background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
+          animation: gradient 5s ease infinite;
         }
         @keyframes fadeIn {
           from { opacity: 0; }
@@ -435,17 +549,40 @@ export default function EventsPage() {
           animation: fadeIn 0.3s ease-out;
         }
         @keyframes scaleIn {
-          from { transform: scale(0.9); opacity: 0; }
+          from { transform: scale(0.95); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
         }
         .animate-scaleIn {
-          animation: scaleIn 0.3s ease-out;
+          animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .line-clamp-1 {
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
         .line-clamp-2 {
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+        
+        /* Scrollbar Styling */
+        *::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        *::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+        }
+        *::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+        }
+        *::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.3);
         }
       `}</style>
     </div>
