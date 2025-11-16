@@ -5,7 +5,7 @@ import Head from 'next/head'
 
 export const metadata = {
   title: 'Rotaract Salé Bab Lamrissa',
-  description: 'Site officiel du Rotaract Club Casablanca',
+  description: 'Site officiel du Rotaract Club Salé Bab Lamrissa ',
 }
 
 export default function RootLayout({ children }) {
