@@ -11,7 +11,7 @@ const upcomingEvents = [
     location: "Salle de conférence A",
     description:
       "Découvrez les bases de l'intelligence artificielle et du machine learning avec nos experts.",
-    image: "/images/Jeunes.jpg",
+    image: "/images/.jpg",
     gradient: "from-cyan-500 to-blue-500",
     daysLeft: 8,
   },
@@ -23,7 +23,7 @@ const upcomingEvents = [
     location: "Centre des Congrès, Casablanca",
     description:
       "Le plus grand événement tech de l'année. Conférences, networking et démonstrations.",
-    image: "/images/marwa.jpg",
+    image: "/images/.jpg",
     gradient: "from-yellow-500 to-orange-500",
     daysLeft: 15,
   },
@@ -35,7 +35,7 @@ const upcomingEvents = [
     location: "En ligne",
     description:
       "Protégez votre infrastructure avec les meilleures pratiques en cybersécurité.",
-    image: "/images/QiuRotaract.jpg",
+    image: "/images/.jpg",
     gradient: "from-red-500 to-pink-500",
     daysLeft: 21,
   },
