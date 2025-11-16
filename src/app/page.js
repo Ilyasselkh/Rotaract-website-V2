@@ -98,10 +98,10 @@ export default function RotaractHome() {
     return count;
   };
 
-  const projectsCount = useCountUp(50, 2000, 0, statsVisible);
-  const countriesCount = useCountUp(15, 2000, 0, statsVisible);
-  const beneficiariesCount = useCountUp(10000, 2500, 0, statsVisible);
-  const membersCount = useCountUp(500, 2000, 0, floatingCardVisible);
+  const projectsCount = useCountUp(50, 1000, 0, statsVisible);
+  const countriesCount = useCountUp(15, 1000, 0, statsVisible);
+  const beneficiariesCount = useCountUp(10000, 1000, 0, statsVisible);
+  const membersCount = useCountUp(500, 1000, 0, floatingCardVisible);
 
   const missions = [
     {
@@ -143,20 +143,10 @@ export default function RotaractHome() {
       <div className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 z-10"></div>
         
-        <div className="w-full h-full relative">
-          <iframe
-            className="w-full h-full object-cover scale-105"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1"
-            title="Rotaract Video"
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
-        </div>
         
         {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4">
-          <div className="animate-fade-in-up" style={{ transform: `translateY(${scrollY * 0.5}px)` }}>
+          <div className="animate-fade-in-up" style={{ transform: `translateY(${scrollY * 1}px)` }}>
             <div className="flex items-center gap-3 mb-6 backdrop-blur-sm bg-white/10 px-6 py-3 rounded-full border border-white/20">
               <Sparkles className="w-5 h-5 text-pink-200" />
               <span className="text-white font-medium">Bienvenue chez Rotaract</span>
